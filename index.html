@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buiu Bikes - Sua Oficina de Bicicletas</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
     <!-- Cabeçalho -->
     <header>
         <div class="container">
             <div class="logo">
-                <img src="logo.png" alt="Buiu Bikes Logo">
+                <img src="imagens/logo.png" alt="Buiu Bikes Logo">
             </div>
             <nav>
                 <ul>
@@ -22,12 +28,14 @@
                     <li><a href="#contact">Contato</a></li>
                 </ul>
             </nav>
+            <div class="nav-toggle"><span></span></div>
             <a href="#contact" class="btn-contact">Contato</a>
         </div>
     </header>
 
     <!-- Banner -->
     <section id="home" class="banner">
+        <div class="overlay"></div>
         <div class="banner-content">
             <h1>Sua bicicleta, nossa paixão</h1>
             <p>Manutenção de qualidade para garantir pedaladas seguras e prazerosas.</p>
@@ -41,14 +49,17 @@
             <h2>Nossos Serviços</h2>
             <div class="services-grid">
                 <div class="service-item">
+                    <i class="fas fa-tools"></i>
                     <h3>Revisão Completa</h3>
                     <p>Garantimos que sua bicicleta esteja em perfeitas condições.</p>
                 </div>
                 <div class="service-item">
+                    <i class="fas fa-cogs"></i>
                     <h3>Troca de Peças</h3>
                     <p>Peças de alta qualidade para sua segurança e conforto.</p>
                 </div>
                 <div class="service-item">
+                    <i class="fas fa-paint-brush"></i>
                     <h3>Customização</h3>
                     <p>Deixe sua bike com a sua cara!</p>
                 </div>
@@ -68,13 +79,15 @@
     <section id="testimonials" class="testimonials">
         <div class="container">
             <h2>O que nossos clientes dizem</h2>
-            <div class="testimonial-item">
-                <p>"A melhor oficina de bicicletas que já fui. Atendimento excelente e serviço impecável!"</p>
-                <span>- João Silva</span>
-            </div>
-            <div class="testimonial-item">
-                <p>"Sempre levo minha bike na Buiu Bikes. Confiança total no trabalho deles!"</p>
-                <span>- Maria Fernandes</span>
+            <div class="testimonial-grid">
+                <div class="testimonial-item">
+                    <p>"A melhor oficina de bicicletas que já fui. Atendimento excelente e serviço impecável!"</p>
+                    <span>- João Silva</span>
+                </div>
+                <div class="testimonial-item">
+                    <p>"Sempre levo minha bike na Buiu Bikes. Confiança total no trabalho deles!"</p>
+                    <span>- Maria Fernandes</span>
+                </div>
             </div>
         </div>
     </section>
@@ -83,22 +96,24 @@
     <section id="contact" class="contact">
         <div class="container">
             <h2>Fale Conosco</h2>
-            <form action="#" method="POST">
-                <div class="form-group">
-                    <input type="text" name="name" placeholder="Seu Nome" required>
+            <div class="contact-grid">
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Seu Nome" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Seu E-mail" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Sua Mensagem" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Enviar Mensagem</button>
+                </form>
+                <div class="contact-info">
+                    <p><i class="fas fa-phone-alt"></i> Telefone: (XX) XXXX-XXXX</p>
+                    <p><i class="fas fa-envelope"></i> E-mail: contato@buiubikes.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Endereço: Rua das Bicicletas, 123, Bairro Ciclovia, Cidade, Estado</p>
                 </div>
-                <div class="form-group">
-                    <input type="email" name="email" placeholder="Seu E-mail" required>
-                </div>
-                <div class="form-group">
-                    <textarea name="message" placeholder="Sua Mensagem" required></textarea>
-                </div>
-                <button type="submit" class="btn-submit">Enviar Mensagem</button>
-            </form>
-            <div class="contact-info">
-                <p>Telefone: (XX) XXXX-XXXX</p>
-                <p>E-mail: contato@buiubikes.com</p>
-                <p>Endereço: Rua das Bicicletas, 123, Bairro Ciclovia, Cidade, Estado</p>
             </div>
         </div>
     </section>
@@ -110,8 +125,8 @@
                 <img src="logo.png" alt="Buiu Bikes Logo">
             </div>
             <div class="footer-social">
-                <a href="#">Facebook</a>
-                <a href="#">Instagram</a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
             </div>
             <p>&copy; 2024 Buiu Bikes. Todos os direitos reservados.</p>
         </div>
@@ -119,4 +134,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
