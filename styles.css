@@ -48,7 +48,7 @@ header .logo a {
 }
 
 .nav-menu {
-    display: none; /* Menu escondido por padrão */
+    display: ; /* Menu escondido por padrão */
 }
 
 .nav-menu.nav-open {
@@ -75,7 +75,7 @@ header .logo a {
 
 /* Banner */
 .banner {
-    background: url('banner.jpg') no-repeat center center/cover;
+    background: url('imagens/banner.jpg') no-repeat center center/cover;
     height: 100vh;
     display: flex;
     align-items: center;
