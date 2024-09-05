@@ -1,160 +1,141 @@
-/* Reset de estilos */
+/* Reseta estilo padrão */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Estrutura */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    padding: 50px;
     line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+/* Container Geral */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 /* Cabeçalho */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
     background-color: #333;
     color: white;
+    padding: 10px 0;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.logo {
+header .logo a {
+    color: #fff;
     font-size: 1.5rem;
-}
-
-.menu-icon {
-    display: none;
-    font-size: 2rem;
-    cursor: pointer;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-nav ul li a {
-    color: white;
     text-decoration: none;
+    margin-left: 20px;
 }
 
-nav.menu-hamburguer {
+header nav {
     display: none;
 }
 
-nav.menu-hamburguer ul {
-    flex-direction: column;
-}
-
-/* Seções */
-section {
-    padding: 50px;
-    text-align: center;
-}
-
-/* Alternar cores das seções */
-section:nth-child(odd) {
-    background-color: #f0f0f0;
-}
-
-section:nth-child(even) {
-    background-color: #ffffff;
-}
-
-/* Serviços */
-.servico {
-    margin: 20px 0;
-    text-align: center;
-}
-
-.servico img {
-    width: 100px;
-    height: auto;
-}
-
-.servico h3 {
-    margin: 10px 0;
-}
-
-/* Depoimentos */
-#depoimentos {
-    background-color: #ffffff;
-}
-
-.depoimento {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 20px 0;
-}
-
-.depoimento img {
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
+.menu-hamburger {
+    display: block;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
     margin-right: 20px;
 }
 
-/* Galeria */
-.galeria {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.galeria img {
-    width: 300px;
-    height: auto;
-    margin: 10px;
-}
-
-/* Redes Sociais */
-.redes-sociais a {
-    margin: 0 10px;
-    color: #333;
-    font-size: 1.5rem;
-}
-
-.redes-sociais a:hover {
-    color: #007bff;
-}
-
-/* Rodapé */
-footer {
-    background-color: #333;
-    color: white;
+.nav-menu ul {
+    list-style: none;
     text-align: center;
-    padding: 20px 0;
 }
 
-/* Estilos Responsivos */
+.nav-menu ul li {
+    margin: 10px 0;
+}
+
+.nav-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+/* Banner */
+.banner {
+    background: url('banner.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+}
+
+.banner-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.banner-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.banner-content .btn {
+    background: #FF0000;
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.banner-content .btn:hover {
+    background: #cc0000;
+}
+
+/* Responsividade */
 @media (max-width: 768px) {
-    .menu-icon {
+    header {
+        padding: 10px;
+    }
+
+    header .menu-hamburger {
         display: block;
     }
 
-    nav ul {
+    .nav-menu {
         display: none;
-        flex-direction: column;
         position: absolute;
         top: 60px;
-        right: 50px;
+        right: 0;
+        left: 0;
         background-color: #333;
-        padding: 20px;
+        padding: 10px 0;
     }
 
-    nav.menu-hamburguer.active ul {
-        display: flex;
+    .nav-menu.nav-open {
+        display: block;
     }
 
-    nav ul li {
-        margin: 10px 0;
+    .services-grid,
+    .testimonial-grid,
+    .contact-grid {
+        flex-direction: column;
     }
 
-    .galeria img {
+    .service-item,
+    .testimonial-item,
+    .contact-info,
+    form {
         width: 100%;
     }
 }
