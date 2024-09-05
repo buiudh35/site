@@ -1,89 +1,130 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buiu Bikes</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> <!-- ícones do FontAwesome -->
 </head>
 <body>
-
-    <!-- Cabeçalho com Menu -->
+    <!-- Cabeçalho com menu estilo hambúrguer -->
     <header>
-        <div class="logo">Buiu Bikes</div>
-        <div class="menu-icon">
-            <i class="fas fa-bars"></i>
+        <div class="container">
+            <div class="logo">
+                <a href="#">Buiu Bikes</a>
+            </div>
+            <div class="menu-hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Serviços</a></li>
+                    <li><a href="#about">Sobre Nós</a></li>
+                    <li><a href="#testimonials">Depoimentos</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav class="menu-hamburguer">
-            <ul>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#depoimentos">Depoimentos</a></li>
-                <li><a href="#galeria">Galeria</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
     </header>
 
-    <!-- Seção Sobre -->
-    <section id="sobre">
-        <h1>Bem-vindo à Buiu Bikes</h1>
-        <p>Oferecemos manutenção completa para bicicletas, garantindo que sua bike esteja sempre em ótimas condições.</p>
-    </section>
-
-    <!-- Seção Serviços -->
-    <section id="servicos">
-        <h2>Nossos Serviços</h2>
-        <div class="servico">
-            <img src="imagem_servico1.png" alt="Ilustração do serviço de manutenção">
-            <h3>Manutenção Completa</h3>
-            <p>Realizamos manutenção completa em sua bike para garantir desempenho e segurança.</p>
-        </div>
-        <div class="servico">
-            <img src="imagem_servico2.png" alt="Ilustração de ajustes">
-            <h3>Ajustes Específicos</h3>
-            <p>Realizamos ajustes de freios, câmbio, suspensão e muito mais.</p>
+    <!-- Banner -->
+    <section id="home" class="banner">
+        <div class="banner-content">
+            <h1>Bem-vindo à Buiu Bikes</h1>
+            <p>A melhor oficina para sua bicicleta</p>
+            <a href="#services" class="btn">Nossos Serviços</a>
         </div>
     </section>
 
-    <!-- Seção Depoimentos -->
-    <section id="depoimentos">
-        <h2>O que dizem nossos clientes</h2>
-        <div class="depoimento">
-            <img src="cliente1.jpg" alt="Foto do cliente 1">
-            <p>"Serviço excelente! Minha bike ficou como nova depois da manutenção." - João Silva</p>
-        </div>
-        <div class="depoimento">
-            <img src="cliente2.jpg" alt="Foto do cliente 2">
-            <p>"Atendimento de primeira e qualidade nos serviços. Super recomendo!" - Maria Souza</p>
+    <!-- Serviços -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Nossos Serviços</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <i class="fas fa-wrench"></i>
+                    <h3>Manutenção Completa</h3>
+                    <p>Revisão completa para sua bike, garantindo segurança e performance.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-bicycle"></i>
+                    <h3>Ajustes Personalizados</h3>
+                    <p>Ajustes finos para que sua bicicleta esteja sempre em perfeitas condições.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-cogs"></i>
+                    <h3>Montagem de Bicicletas</h3>
+                    <p>Montagem de bicicletas sob medida, de acordo com suas necessidades.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Seção Galeria de Projetos -->
-    <section id="galeria">
-        <h2>Nossos Projetos</h2>
-        <div class="galeria">
-            <img src="projeto1.jpg" alt="Projeto 1">
-            <img src="projeto2.jpg" alt="Projeto 2">
-            <img src="projeto3.jpg" alt="Projeto 3">
+    <!-- Sobre Nós -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>Sobre Nós</h2>
+            <p>Somos apaixonados por bicicletas e dedicados a fornecer o melhor serviço para nossos clientes. Na Buiu Bikes, cada detalhe é importante, e estamos aqui para garantir que sua bike esteja sempre pronta para a estrada.</p>
         </div>
     </section>
 
-    <!-- Seção Contato -->
-    <section id="contato">
-        <h2>Entre em Contato</h2>
-        <p>Nos siga nas redes sociais ou entre em contato pelo formulário abaixo:</p>
-        <div class="redes-sociais">
-            <a href="https://facebook.com/buiubikes" target="_blank"><i class="fa fa-facebook"></i></a>
-            <a href="https://instagram.com/buiubikes" target="_blank"><i class="fa fa-instagram"></i></a>
-            <a href="https://twitter.com/buiubikes" target="_blank"><i class="fa fa-twitter"></i></a>
+    <!-- Depoimentos -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2>O que dizem nossos clientes</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-item">
+                    <p>"Serviço excepcional! Minha bicicleta nunca esteve em melhores condições. Recomendo a todos!"</p>
+                    <span>- João Silva</span>
+                </div>
+                <div class="testimonial-item">
+                    <p>"Atendimento excelente e profissionais qualificados. Sempre volto para revisões periódicas."</p>
+                    <span>- Maria Oliveira</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contact" class="contact">
+        <div class="container contact-grid">
+            <div class="contact-info">
+                <h2>Fale Conosco</h2>
+                <p><i class="fas fa-phone"></i>Telefone: (22) 99246-4780</p>
+                <p><i class="fas fa-envelope"></i>E-mail: contato@buiubikes.com</p>
+                <p><i class="fas fa-map-marker-alt"></i>Endereço: Travessa Brasil, 13, Rasa, Armação dos Búzios - RJ</p>
+            </div>
+            <form>
+                <h2>Envie uma mensagem</h2>
+                <div class="form-group">
+                    <input type="text" placeholder="Seu Nome" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Seu E-mail" required>
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Sua Mensagem" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Enviar</button>
+            </form>
         </div>
     </section>
 
     <!-- Rodapé -->
     <footer>
-        <p>&copy; 2024 Buiu Bikes. Todos os direitos reservados.</p>
+        <div class="container">
+            <div class="footer-logo">
+                <img src="logo.png" alt="Buiu Bikes">
+            </div>
+            <div class="footer-social">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+            </div>
+            <p>&copy; 2024 Buiu Bikes. Todos os direitos reservados.</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
