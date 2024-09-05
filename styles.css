@@ -100,13 +100,11 @@ header .nav-toggle {
     margin-bottom: 20px;
     text-transform: uppercase;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    padding: 0px 20px;
 }
 
 .banner-content p {
     font-size: 1.5rem;
     margin-bottom: 30px;
-    padding: 0px 20px;
 }
 
 .banner .btn-main {
