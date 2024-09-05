@@ -419,3 +419,37 @@ footer p {
 .container {
     padding: 0 50px;
 }
+
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+        cursor: pointer;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #000; /* Cor de fundo do menu no modo responsivo */
+        width: 100%;
+        position: absolute;
+        top: 60px; /* Ajusta a posição abaixo do cabeçalho */
+        left: 0;
+        right: 0;
+        padding: 10px 0;
+    }
+
+    nav ul.nav-open {
+        display: flex; /* Exibe o menu quando a classe 'nav-open' está presente */
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+        display: block;
+    }
+}
