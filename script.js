@@ -1,17 +1,27 @@
-// Seleciona o ícone de hambúrguer e o menu de navegação
-const menuHamburger = document.querySelector('.menu-hamburger');
-const navMenu = document.querySelector('.nav-menu');
+// script.js
 
-// Adiciona evento de clique no ícone de hambúrguer
-menuHamburger.addEventListener('click', () => {
-    // Adiciona ou remove a classe 'nav-open' para abrir/fechar o menu
-    navMenu.classList.toggle('nav-open');
+// Rolagem suave ao clicar nos links do menu
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
 });
 
-// Adicional: Fecha o menu ao clicar em qualquer link (opcional)
-const navLinks = document.querySelectorAll('.nav-menu ul li a');
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('nav-open');
-    });
+// Menu de navegação responsivo (para dispositivos móveis)
+const navToggle = document.querySelector('.nav-toggle');
+const nav = document.querySelector('nav ul');
+
+navToggle.addEventListener('click', () => {
+    nav.classList.toggle('nav-open');
+});
+
+// Fecha o menu quando um link é clicado
+nav.addEventListener('click', () => {
+    if (nav.classList.contains('nav-open')) {
+        nav.classList.remove('nav-open');
+    }
 });
