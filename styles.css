@@ -1,278 +1,160 @@
-/* Reseta estilo padrão */
+/* Reset de estilos */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estrutura */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
-    background-color: #f4f4f4;
-}
-
-/* Container Geral */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
 }
 
 /* Cabeçalho */
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
-    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-header .logo a {
-    color: #fff;
-    font-size: 1.5rem;
-    text-decoration: none;
-    margin-left: 20px;
-}
-
-.menu-hamburger {
-    display: block;
-    color: white;
-    font-size: 1.8rem;
-    cursor: pointer;
-    margin-right: 20px;
-}
-
-.nav-menu {
-    display: ; /* Menu escondido por padrão */
-}
-
-.nav-menu.nav-open {
-    display: block; /* Exibe o menu quando ativado */
-}
-
-.nav-menu ul {
-    list-style: none;
-    text-align: center;
-    background-color: #333;
-}
-
-.nav-menu ul li {
-    margin: 10px 0;
-}
-
-.nav-menu ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.2rem;
-    padding: 10px;
-    display: block;
-}
-
-/* Banner */
-.banner {
-    background: url('imagens/banner.jpg') no-repeat center center/cover;
-    height: 100vh;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    color: #fff;
-    text-align: center;
+    padding: 10px 50px;
+    background-color: #333;
+    color: white;
 }
 
-.banner-content h1 {
-    font-size: 3rem;
-    margin-bottom: 20px;
+.logo {
+    font-size: 1.5rem;
 }
 
-.banner-content p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
+.menu-icon {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
 }
 
-.banner-content .btn {
-    background: #FF0000;
-    color: #fff;
-    padding: 15px 30px;
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: white;
     text-decoration: none;
-    font-size: 1.2rem;
-    border-radius: 5px;
-    transition: background 0.3s;
 }
 
-.banner-content .btn:hover {
-    background: #cc0000;
+nav.menu-hamburguer {
+    display: none;
+}
+
+nav.menu-hamburguer ul {
+    flex-direction: column;
 }
 
 /* Seções */
 section {
-    padding: 50px 0;
+    padding: 50px;
+    text-align: center;
 }
 
-h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 2rem;
-    color: #333;
+/* Alternar cores das seções */
+section:nth-child(odd) {
+    background-color: #f0f0f0;
+}
+
+section:nth-child(even) {
+    background-color: #ffffff;
 }
 
 /* Serviços */
-.services-grid {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.service-item {
-    flex: 1;
+.servico {
+    margin: 20px 0;
     text-align: center;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.service-item i {
-    font-size: 3rem;
-    color: #FF0000;
-    margin-bottom: 10px;
+.servico img {
+    width: 100px;
+    height: auto;
 }
 
-.service-item h3 {
-    margin-bottom: 10px;
-    font-size: 1.5rem;
-}
-
-.service-item p {
-    font-size: 1rem;
-}
-
-/* Sobre Nós */
-.about p {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
+.servico h3 {
+    margin: 10px 0;
 }
 
 /* Depoimentos */
-.testimonial-grid {
+#depoimentos {
+    background-color: #ffffff;
+}
+
+.depoimento {
     display: flex;
-    gap: 20px;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
 }
 
-.testimonial-item {
-    flex: 1;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    font-style: italic;
+.depoimento img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
 }
 
-.testimonial-item span {
-    display: block;
-    margin-top: 10px;
-    color: #FF0000;
-    font-weight: bold;
-}
-
-/* Contato */
-.contact-grid {
+/* Galeria */
+.galeria {
     display: flex;
-    gap: 20px;
-    justify-content: space-between;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
-.contact-info {
-    flex: 1;
+.galeria img {
+    width: 300px;
+    height: auto;
+    margin: 10px;
 }
 
-.contact-info p {
-    font-size: 1.1rem;
-    margin-bottom: 10px;
+/* Redes Sociais */
+.redes-sociais a {
+    margin: 0 10px;
+    color: #333;
+    font-size: 1.5rem;
 }
 
-.contact-info i {
-    margin-right: 10px;
-}
-
-form {
-    flex: 1;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group input,
-.form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-.btn-submit {
-    background: #FF0000;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.btn-submit:hover {
-    background: #cc0000;
+.redes-sociais a:hover {
+    color: #007bff;
 }
 
 /* Rodapé */
 footer {
     background-color: #333;
-    color: #fff;
+    color: white;
     text-align: center;
     padding: 20px 0;
 }
 
-.footer-logo img {
-    width: 100px;
-}
-
-.footer-social a {
-    color: #fff;
-    margin: 0 10px;
-    text-decoration: none;
-}
-
-/* Responsividade */
+/* Estilos Responsivos */
 @media (max-width: 768px) {
-    header {
-        padding: 10px;
+    .menu-icon {
+        display: block;
     }
 
-    .nav-menu {
-        display: none; /* Esconde o menu por padrão */
-    }
-
-    .nav-menu.nav-open {
-        display: block; /* Exibe o menu ao clicar no ícone hambúrguer */
-    }
-
-    .services-grid,
-    .testimonial-grid,
-    .contact-grid {
+    nav ul {
+        display: none;
         flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 50px;
+        background-color: #333;
+        padding: 20px;
     }
 
-    .service-item,
-    .testimonial-item,
-    .contact-info,
-    form {
+    nav.menu-hamburguer.active ul {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .galeria img {
         width: 100%;
     }
 }
