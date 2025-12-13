@@ -1,138 +1,340 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buiu Bikes - Sua Oficina de Bicicletas</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buiu Bikes | Oficina de Bicicletas em Armação dos Búzios</title>
+  <style>
+    :root {
+      --preto: #000000;
+      --vermelho: #e10600;
+      --branco: #ffffff;
+      --cinza: #111111;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+
+    body {
+      background: var(--preto);
+      color: var(--branco);
+    }
+
+    header {
+      padding: 24px 16px 32px;
+      text-align: center;
+      background: linear-gradient(180deg, #000 0%, #0e0e0e 100%);
+      border-bottom: 2px solid var(--vermelho);
+    }
+
+    header img {
+      max-width: 180px;
+      width: 100%;
+      margin-bottom: 12px;
+    }
+
+    header p {
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+
+    section {
+      padding: 24px 16px;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      border-left: 4px solid var(--vermelho);
+      padding-left: 8px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .card {
+      background: var(--cinza);
+      border-radius: 14px;
+      padding: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+    }
+
+    .card h3 {
+      color: var(--vermelho);
+      margin-bottom: 6px;
+      font-size: 1.05rem;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin-top: 14px;
+      padding: 14px;
+      background: var(--vermelho);
+      color: var(--branco);
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .btn:active {
+      transform: scale(0.97);
+      box-shadow: 0 0 0 rgba(0,0,0,0);
+    }
+
+    ul {
+      list-style: none;
+      margin-top: 12px;
+    }
+
+    ul li {
+      background: var(--cinza);
+      padding: 14px 16px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    ul li a {
+      color: var(--branco);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      padding: 20px 16px;
+      text-align: center;
+      font-size: 0.8rem;
+      opacity: 0.7;
+      border-top: 1px solid #222;
+    }
+
+    /* Mobile-first: cards sempre em coluna */
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+@media (min-width: 1024px) {
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  body {
+    display: block;
+  }
+
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    padding: 40px 32px;
+  }
+
+  header img {
+    max-width: 240px;
+  }
+
+  header p {
+    max-width: 520px;
+    font-size: 1.05rem;
+  }
+
+  section {
+    padding: 48px 32px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .card {
+    padding: 24px;
+  }
+}
+
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    padding: 40px 32px;
+  }
+
+  header img {
+    max-width: 240px;
+    margin-bottom: 0;
+  }
+
+  header p {
+    max-width: 520px;
+    font-size: 1.05rem;
+  }
+
+  section {
+    padding: 48px 32px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .card {
+    padding: 24px;
+  }
+}
+
+      main {
+        max-width: 1200px;
+        width: 100%;
+      }
+
+      header {
+        padding: 40px 24px 48px;
+      }
+
+      header img {
+        max-width: 260px;
+      }
+
+      header p {
+        font-size: 1.05rem;
+      }
+
+      section {
+        padding: 40px 24px;
+      }
+
+      .cards {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      .card h3 {
+        font-size: 1.1rem;
+      }
+
+      .card p {
+        font-size: 0.95rem;
+      }
+    }
+
+      header img {
+        max-width: 220px;
+      }
+    }
+  </style>
 </head>
-
 <body>
-    <!-- Cabeçalho -->
-    <header>
-        <div class="container">
-            <div class="logo">
-                <img src="imagens/logo.png" alt="Buiu Bikes Logo">
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Início</a></li>
-                    <li><a href="#services">Serviços</a></li>
-                    <li><a href="#about">Sobre Nós</a></li>
-                    <li><a href="#testimonials">Depoimentos</a></li>
-                    <li><a href="#contact">Contato</a></li>
-                </ul>
-            </nav>
-            <div class="nav-toggle"><span></span></div>
-            <a href="#contact" class="btn-contact">Contato</a>
-        </div>
-    </header>
+<main>
 
-    <!-- Banner -->
-    <section id="home" class="banner">
-        <div class="overlay"></div>
-        <div class="banner-content">
-            <h1>Sua bicicleta, nossa paixão</h1>
-            <p>Manutenção de qualidade para garantir pedaladas seguras e prazerosas.</p>
-            <a href="#services" class="btn-main">Saiba Mais</a>
-        </div>
-    </section>
+<header>
+  <img src="logo.png" alt="Buiu Bikes Logo" />
+  <p>Sua Bicicleta, Nossa Paixão!</p>
+</header>
 
-    <!-- Serviços -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2>Nossos Serviços</h2>
-            <div class="services-grid">
-                <div class="service-item">
-                    <i class="fas fa-tools"></i>
-                    <h3>Revisão Completa</h3>
-                    <p>Garantimos que sua bicicleta esteja em perfeitas condições.</p>
-                </div>
-                <div class="service-item">
-                    <i class="fas fa-cogs"></i>
-                    <h3>Troca de Peças</h3>
-                    <p>Peças de alta qualidade para sua segurança e conforto.</p>
-                </div>
-                <div class="service-item">
-                    <i class="fas fa-paint-brush"></i>
-                    <h3>Customização</h3>
-                    <p>Deixe sua bike com a sua cara!</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section>
+  <h2>Sobre a Buiu Bikes</h2>
+  <p>A Buiu Bikes é uma oficina especializada em manutenção de bicicletas, focada em oferecer um serviço honesto, de qualidade e feito com atenção aos detalhes. Trabalhamos com manutenção preventiva e corretiva.<br>
+<br>
+Aqui, cada bicicleta é tratada com responsabilidade e respeito, sempre buscando a melhor solução para o ciclista, seja para o uso diário, lazer ou treino. Nosso compromisso é entregar um serviço bem feito, com transparência e confiança, para que você pedale sem preocupação.</p>
+</section>
 
-    <!-- Sobre Nós -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2>Sobre Nós</h2>
-            <p>Na Buiu Bikes, nossa missão é garantir que cada pedalada seja uma experiência segura e prazerosa. Com anos de experiência, nossa equipe está pronta para cuidar da sua bike como se fosse nossa.</p>
-        </div>
-    </section>
+<section>
+  <h2>Contato Rápido</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>📍 Localização</h3>
+      <p>Veja como chegar até a oficina</p>
+      <a class="btn" onclick="abrirMapa()">Abrir no Maps</a>
+    </div>
+    <div class="card">
+      <h3>💬 WhatsApp</h3>
+      <p>Orçamento e agendamento</p>
+      <a class="btn" onclick="abrirWhats()">Falar no WhatsApp</a>
+    </div>
+    <div class="card">
+      <h3>📸 Instagram</h3>
+      <p>Novidades e publicações</p>
+      <a class="btn" onclick="abrirInstagram()">Abrir Instagram</a>
+    </div>
+    <div class="card">
+      <h3>📘 Facebook</h3>
+      <p>Novidades e publicações</p>
+      <a class="btn" onclick="abrirFacebook()">Abrir Facebook</a>
+    </div>
+  </div>
+</section>
 
-    <!-- Depoimentos -->
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-            <h2>O que nossos clientes dizem</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial-item">
-                    <p>"A melhor oficina de bicicletas que já fui. Atendimento excelente e serviço impecável!"</p>
-                    <span>- João Silva</span>
-                </div>
-                <div class="testimonial-item">
-                    <p>"Sempre levo minha bike na Buiu Bikes. Confiança total no trabalho deles!"</p>
-                    <span>- Maria Fernandes</span>
-                </div>
-            </div>
-        </div>
-    </section>
+<section>
+  <h2>Indicações de Bicicletas</h2>
+  <ul>
+    <li><a href="#" target="_blank">🚲 MTB Aro 29 – Iniciante</a></li>
+    <li><a href="#" target="_blank">🚲 MTB Aro 29 – Intermediario</a></li>
+    <li><a href="#" target="_blank">🚲 MTB Aro 29 – Avançado</a></li>
+    <li><a href="#" target="_blank">🚲 Bicicleta Urbana / Passeio</a></li>
+    <li><a href="#" target="_blank">🚲 Bicicleta Infantil</a></li>
+  </ul>
+</section>
 
-    <!-- Contato -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Fale Conosco</h2>
-            <div class="contact-grid">
-                <form action="#" method="POST">
-                    <div class="form-group">
-                        <input type="text" name="name" placeholder="Seu Nome" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" name="email" placeholder="Seu E-mail" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea name="message" placeholder="Sua Mensagem" required></textarea>
-                    </div>
-                    <button type="submit" class="btn-submit">Enviar Mensagem</button>
-                </form>
-                <div class="contact-info">
-                    <p><i class="fas fa-phone-alt"></i> Telefone: (XX) XXXX-XXXX</p>
-                    <p><i class="fas fa-envelope"></i> E-mail: contato@buiubikes.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Endereço: Rua das Bicicletas, 123, Bairro Ciclovia, Cidade, Estado</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<footer>
+  <p>© 2025 • Buiu Bikes</p>
+</footer>
 
-    <!-- Rodapé -->
-    <footer>
-        <div class="container">
-            <div class="footer-logo">
-                <img src="imagens/logo.png" alt="Buiu Bikes Logo">
-            </div>
-            <div class="footer-social">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-            <p>&copy; 2024 Buiu Bikes. Todos os direitos reservados.</p>
-        </div>
-    </footer>
+<script>
+  function abrirMapa() {
+    window.open('https://maps.app.goo.gl/znkZgdg1HX7PK8Mq8', '_blank');
+  }
+  function abrirWhats() {
+    window.open('https://wa.me/5522992464780', '_blank');
+  }
+  function abrirInstagram() {
+    window.open('https://www.instagram.com/buiubikes', '_blank');
+  }
+  function abrirFacebook() {
+    window.open('https://www.facebook.com/buiubikes', '_blank');
+  }
+</script>
 
-    <script src="script.js"></script>
+</main>
 </body>
-
 </html>
