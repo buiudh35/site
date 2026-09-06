@@ -1,337 +1,632 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html class="dark scroll-smooth" lang="pt-BR" style="">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Buiu Bikes | Oficina de Bicicletas em Armação dos Búzios</title>
-  <style>
-    :root {
-      --preto: #000000;
-      --vermelho: #e10600;
-      --branco: #ffffff;
-      --cinza: #303030;
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Buiu Bikes Repair | Sua bike pronta pro pedal, sem complicação</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700;1,800&family=Chivo:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary-container": "#b5b4b9",
+            "on-surface": "#e0e3e6",
+            "on-primary": "#690006",
+            "background": "#101416",
+            "surface-container": "#1d2022",
+            "on-tertiary-fixed-variant": "#44474d",
+            "surface-container-lowest": "#0b0f11",
+            "surface-container-highest": "#323538",
+            "surface-variant": "#323538",
+            "tertiary-fixed-dim": "#c4c6ce",
+            "on-tertiary-fixed": "#191c21",
+            "secondary-fixed-dim": "#c7c6ca",
+            "on-surface-variant": "#e7bdb8",
+            "surface-container-low": "#191c1e",
+            "secondary-container": "#46464a",
+            "surface-bright": "#363a3c",
+            "on-tertiary": "#2d3037",
+            "primary": "#ffb4ac",
+            "outline-variant": "#5d3f3c",
+            "surface-tint": "#ffb4ac",
+            "on-error-container": "#ffdad6",
+            "on-secondary": "#2f3034",
+            "surface": "#101416",
+            "on-tertiary-container": "#f7f8ff",
+            "tertiary-fixed": "#e1e2ea",
+            "on-primary-container": "#fff6f5",
+            "inverse-on-surface": "#2d3133",
+            "tertiary-container": "#6f7279",
+            "inverse-primary": "#c00015",
+            "error-container": "#93000a",
+            "primary-fixed": "#ffdad6",
+            "secondary-fixed": "#e3e2e6",
+            "on-secondary-fixed": "#1b1b1f",
+            "on-primary-fixed": "#410002",
+            "primary-container": "#e01a22",
+            "on-primary-fixed-variant": "#93000d",
+            "surface-container-high": "#272a2d",
+            "on-secondary-fixed-variant": "#46464a",
+            "error": "#ffb4ab",
+            "on-error": "#690005",
+            "inverse-surface": "#e0e3e6",
+            "outline": "#ae8883",
+            "tertiary": "#c4c6ce",
+            "surface-dim": "#101416",
+            "secondary": "#c7c6ca",
+            "on-background": "#e0e3e6",
+            "primary-fixed-dim": "#ffb4ac"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "space-2xl": "3rem",
+            "margin-tablet": "2rem",
+            "gutter-lg": "2rem",
+            "margin-mobile": "1.25rem",
+            "space-3xl": "4.5rem",
+            "space-xs": "0.5rem",
+            "space-md": "1rem",
+            "gutter-sm": "1rem",
+            "space-2xs": "0.25rem",
+            "gutter-md": "1.5rem",
+            "space-4xl": "6rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2rem",
+            "margin-desktop": "3rem",
+            "space-sm": "0.75rem"
+          },
+          "fontFamily": {
+            "headline-xl": ["Barlow Condensed"],
+            "display-hero": ["Barlow Condensed"],
+            "label-lg": ["Chivo"],
+            "title-sm": ["Chivo"],
+            "label-sm": ["Chivo"],
+            "body-lg": ["Chivo"],
+            "label-md": ["Chivo"],
+            "headline-md": ["Barlow Condensed"],
+            "body-md": ["Chivo"],
+            "body-sm": ["Chivo"],
+            "display-hero-mobile": ["Barlow Condensed"],
+            "headline-lg": ["Barlow Condensed"],
+            "headline-xl-mobile": ["Barlow Condensed"]
+          },
+          "fontSize": {
+            "headline-xl": ["48px", { "lineHeight": "54px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "display-hero": ["80px", { "lineHeight": "84px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "label-lg": ["14px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+            "title-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "600" }],
+            "label-sm": ["10px", { "lineHeight": "12px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "14px", "letterSpacing": "0.06em", "fontWeight": "700" }],
+            "headline-md": ["24px", { "lineHeight": "30px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "display-hero-mobile": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.01em", "fontWeight": "800" }],
+            "headline-lg": ["32px", { "lineHeight": "38px", "letterSpacing": "0", "fontWeight": "700" }],
+            "headline-xl-mobile": ["32px", { "lineHeight": "38px", "letterSpacing": "0", "fontWeight": "700" }]
+          }
+        },
+      },
     }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 500, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
     }
-
-    body {
-      background: var(--preto);
-      color: var(--branco);
+    .red-glow {
+      box-shadow: 0 4px 20px rgba(224, 26, 34, 0.35);
     }
-
-    header {
-      padding: 30px 30px;
-      text-align: center;
-      background: linear-gradient(180deg, #000 0%, #0e0e0e 100%);
-      border-bottom: 2px solid var(--vermelho);
-    }
-
-    header img {
-      max-width: 180px;
-      width: 100%;
-      margin-bottom: 12px;
-    }
-
-    header p {
-      font-size: 0.95rem;
-      opacity: 0.9;
-    }
-
-    section {
-      padding: 24px 16px;
-    }
-
-    h2 {
-      font-size: 1.2rem;
-      margin-bottom: 12px;
-      border-left: 4px solid var(--vermelho);
-      padding-left: 8px;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-      margin-top: 16px;
-    }
-
-    .card {
-      background: var(--cinza);
-      border-radius: 14px;
-      padding: 20px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
-    }
-
-    .card h3 {
-      color: var(--vermelho);
-      margin-bottom: 6px;
-      font-size: 1.05rem;
-    }
-
-    .card p {
-      font-size: 0.9rem;
-      opacity: 0.9;
-    }
-
-    .btn {
-      display: block;
-      width: 100%;
-      text-align: center;
-      margin-top: 14px;
-      padding: 14px;
-      background: var(--vermelho);
-      color: var(--branco);
-      text-decoration: none;
-      border-radius: 10px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .btn:active {
-      transform: scale(0.97);
-      box-shadow: 0 0 0 rgba(0,0,0,0);
-    }
-
-    ul {
-      list-style: none;
-      margin-top: 12px;
-    }
-
-    ul li {
-      background: var(--cinza);
-      padding: 14px 16px;
-      border-radius: 10px;
-      margin-bottom: 10px;
-    }
-
-    ul li a {
-      color: var(--branco);
-      text-decoration: none;
-      font-size: 0.95rem;
-    }
-
-    footer {
-      padding: 20px 16px;
-      text-align: center;
-      font-size: 0.8rem;
-      opacity: 0.7;
-      border-top: 1px solid #222;
-    }
-
-    /* Mobile-first: cards sempre em coluna */
-.cards {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-top: 16px;
-}
-
-@media (min-width: 1024px) {
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-  }
-
-  body {
-    display: block;
-  }
-
-  main {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    text-align: left;
-    padding: 40px 32px;
-  }
-
-  header img {
-    max-width: 240px;
-  }
-
-  header p {
-    max-width: 520px;
-    font-size: 1.05rem;
-  }
-
-  section {
-    padding: 48px 32px;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  .card {
-    padding: 24px;
-  }
-}
-
-  main {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    text-align: left;
-    padding: 40px 32px;
-  }
-
-  header img {
-    max-width: 240px;
-    margin-bottom: 0;
-  }
-
-  header p {
-    max-width: 520px;
-    font-size: 1.05rem;
-  }
-
-  section {
-    padding: 48px 32px;
-  }
-
-  .cards {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  .card {
-    padding: 24px;
-  }
-}
-
-      main {
-        max-width: 1200px;
-        width: 100%;
-      }
-
-      header {
-        padding: 40px 24px 48px;
-      }
-
-      header img {
-        max-width: 260px;
-      }
-
-      header p {
-        font-size: 1.05rem;
-      }
-
-      section {
-        padding: 40px 24px;
-      }
-
-      .cards {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
-      }
-
-      h2 {
-        font-size: 1.4rem;
-      }
-
-      .card h3 {
-        font-size: 1.1rem;
-      }
-
-      .card p {
-        font-size: 0.95rem;
-      }
-    }
-
-      header img {
-        max-width: 220px;
-      }
+    .warm-glow {
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
     }
   </style>
 </head>
-<body>
-<main>
-
-<header>
-  <center><img src="logo.png" alt="Buiu Bikes Logo" /></center>
+<body class="bg-background text-on-surface font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen" data-mode="connect">
+<header class="fixed top-0 left-0 right-0 w-full z-50 bg-background/95 backdrop-blur-md border-b border-surface-container-highest shadow-md">
+<div class="max-w-6xl mx-auto flex items-center justify-between px-margin-mobile md:px-margin-tablet py-3">
+<a class="flex items-center gap-3 group transition-transform duration-150" href="#">
+<img alt="Buiu Bikes Repair Logo" class="h-12 md:h-14 w-auto object-contain transition-transform duration-200 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfc8GHgYz4-ePVotYP_r2E-FskK4Ofi21QTwWVBGSEQdFWmAbZ4Cza9r3T6xGuAxemJD8ktyym1GfyuCZyYvUSlc8kthBEULvl_bSH4UxONCpi2kVQdMhZYLrS1-i0YVXbl9p3kuf7XXJKBNCD8fTRwuCPfvTkrEigRnHQLzMOz1rRNxBJa0hEsr6s1FnOgWYceNyvmGOrha4FnJnyXuEe-IXDvBqNFLjJd3fZ_338SPM1ZewW6Fb7liLb1027diSL">
+<div class="flex flex-col">
+<span class="font-headline-lg text-headline-lg uppercase text-on-surface tracking-tight leading-none">
+          Buiu Bikes 
+</span>
+<span class="font-body-sm text-xs text-on-secondary-container mt-0.5">Sua bike, nossa paixão!</span>
+</div>
+</a>
+<nav class="hidden md:flex items-center gap-8 font-label-lg text-label-lg uppercase tracking-wider text-secondary"><a class="hover:text-primary-container transition-colors" href="#revisoes">Serviços</a>
+<a class="hover:text-primary-container transition-colors" href="#oficina">Sobre</a>
+<a class="hover:text-primary-container transition-colors" href="#contato">Contato</a>
+<a class="hover:text-primary-container transition-colors" href="#indicacoes">Indicações</a></nav>
+<div class="flex items-center gap-3">
+<a class="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-label-lg text-xs md:text-label-lg uppercase tracking-wider px-4 md:px-5 py-2.5 rounded-full font-bold transition-all shadow-md active:scale-95" href="https://wa.me/5522992464780?text=Ol%C3%A1%20Buiu%20Bikes,%20vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida!" rel="noopener noreferrer" target="_blank"><span class="material-symbols-outlined text-lg" data-icon="calendar_month">calendar_month</span>
+<span class="hidden sm:inline">Agendar</span></a>
+</div>
+</div>
 </header>
+<main class="pt-20">
+<section class="relative overflow-hidden py-16 md:py-24 border-b border-surface-container-highest bg-gradient-to-b from-surface-container-low to-background"><div class="absolute inset-0 pointer-events-none overflow-hidden"><img alt="Buiu Bikes Oficina Bancada" class="w-full h-full object-cover object-center opacity-20 filter contrast-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLujw_Oa8nrfP1H8u96soF5jEKBROwEdqhXwEsFROA8_pHCQ3F79d0uR7PwVPt-ITsN2T1c3dPi202TlVNVZUWThULeWcHV39KNzreRxORJl9XpI9zrG-50pfJkB742k1UVXu84f50vD-MpN26TlW2_-cUWjVdqrq4qDZ2XUlMDxhVtFosDOjEx56q4OMM9rQU2tx4R4IzGWtBvW1UsuenR2uCqAAa1_89zzi4GsCC3JqilHCKoYN2V27fnTPjRylK" style="opacity: 0.45;"><div class="absolute inset-0 bg-gradient-to-b from-background/90 via-background/80 to-background" style="background: linear-gradient(rgba(16, 20, 22, 0.75), rgba(16, 20, 22, 0.65), rgba(16, 20, 22, 0.95));"></div></div>
+<div class="max-w-5xl mx-auto px-margin-mobile md:px-margin-tablet text-center relative">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-container/15 text-primary border border-primary-container/30 font-label-sm uppercase tracking-wider mb-6">
+<span class="material-symbols-outlined text-sm" data-icon="favorite">favorite</span>
+<span class="">Cuidamos da sua companheira de pedal como se fosse nossa</span>
+</div>
+<h1 class="font-headline-xl text-3xl sm:text-5xl md:text-6xl uppercase font-black text-on-surface tracking-tight leading-tight md:leading-none mb-6">
+      Sua bike pronta pro pedal,<br class="hidden sm:inline">
+<span class="text-primary-container">sem enrolação e sem susto na conta.</span>
+</h1>
+<p class="font-body-lg text-lg md:text-xl text-on-secondary-container max-w-2xl mx-auto mb-8 leading-relaxed">
+      Sabe aquele barulhinho chato que não some ou a marcha que te deixa na mão na subida? A gente resolve com carinho, preço justo e transparência.
+    </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-primary-container hover:bg-[#ff2d36] text-on-primary-container font-label-lg uppercase tracking-wider px-7 py-3.5 rounded-full font-bold red-glow transition-all active:scale-95 text-center" href="https://wa.me/5522992464780?text=Ol%C3%A1%20Buiu!%20Gostaria%20de%20combinar%20uma%20revis%C3%A3o%20pra%20minha%20bike" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="">Agendar SERVIÇO</span>
+</a>
 
-<section>
-  <h2>Sobre a Buiu Bikes</h2>
-<p>Na Buiu Bikes, cada bicicleta é tratada com responsabilidade e respeito, sempre buscando a melhor solução para o ciclista, seja para o uso diário, lazer ou treino. Nosso compromisso é entregar um serviço bem feito, com transparência e confiança, para que você pedale sem preocupação.</p>
+</div>
+</div>
 </section>
-
-<section>
-  <h2>Contato Rápido</h2>
-  <div class="cards">
-    <div class="card">
-      <h3>📍 Localização</h3>
-      <p>Veja como chegar até a oficina</p>
-      <a class="btn" onclick="abrirMapa()">Abrir no Maps</a>
-    </div>
-    <div class="card">
-      <h3>💬 WhatsApp</h3>
-      <p>Orçamento e agendamento</p>
-      <a class="btn" onclick="abrirWhats()">Falar no WhatsApp</a>
-    </div>
-    <div class="card">
-      <h3>📸 Instagram</h3>
-      <p>Novidades e publicações</p>
-      <a class="btn" onclick="abrirInstagram()">Abrir Instagram</a>
-    </div>
-    <div class="card">
-      <h3>📘 Facebook</h3>
-      <p>Novidades e publicações</p>
-      <a class="btn" onclick="abrirFacebook()">Abrir Facebook</a>
-    </div>
-  </div>
+<section class="py-16 md:py-20 bg-surface-container-lowest border-b border-surface-container-highest" id="como-funciona">
+<div class="max-w-6xl mx-auto px-margin-mobile md:px-margin-tablet">
+<div class="text-center max-w-2xl mx-auto mb-12">
+<span class="font-label-sm uppercase tracking-widest font-bold text-primary-container">Sem segredo e sem pegadinha</span>
+<h2 class="font-headline-xl text-3xl md:text-4xl uppercase font-bold text-on-surface mt-1">
+        Por que a galera adora trazer a bike aqui?
+      </h2>
+<p class="font-body-md text-on-secondary-container mt-2">
+        A gente trata você com o mesmo respeito e franqueza com que gostaríamos de ser tratados.
+      </p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/20 hover:border-primary-container/40 transition-all flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-xl bg-primary-container/20 text-primary-container flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-2xl" data-icon="videocam">videocam</span>
+</div>
+<h3 class="font-headline-md text-xl uppercase font-bold text-on-surface mb-2">Vídeo no Whats</h3>
+<p class="font-body-sm text-on-secondary-container leading-relaxed">
+          Gravamos um vídeo mostrando o que tá desgastado ou precisando de carinho antes de desmontar. Nada de surpresa no final!
+        </p>
+</div>
+</div>
+<div class="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/20 hover:border-primary-container/40 transition-all flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-xl bg-primary-container/20 text-primary-container flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-2xl" data-icon="event_available">event_available</span>
+</div>
+<h3 class="font-headline-md text-xl uppercase font-bold text-on-surface mb-2">Prazo Combinado</h3>
+<p class="font-body-sm text-on-secondary-container leading-relaxed">
+          Marcou o dia? A gente cumpre certinho. Você nunca fica na mão nem perde aquele pedal especial do fim de semana esperando a bike ficar pronta.
+        </p>
+</div>
+</div>
+<div class="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/20 hover:border-primary-container/40 transition-all flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-xl bg-primary-container/20 text-primary-container flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-2xl" data-icon="thumb_up">thumb_up</span>
+</div>
+<h3 class="font-headline-md text-xl uppercase font-bold text-on-surface mb-2">Preço Justo & Claro</h3>
+<p class="font-body-sm text-on-secondary-container leading-relaxed">
+          Se a corrente ainda roda bem, a gente avisa! Nunca vamos inventar peça pra trocar. Honestidade em primeiro lugar, sempre.
+        </p>
+</div>
+</div>
+<div class="p-6 rounded-2xl bg-surface-container-low border border-outline-variant/20 hover:border-primary-container/40 transition-all flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-xl bg-primary-container/20 text-primary-container flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-2xl" data-icon="coffee">coffee</span>
+</div>
+<h3 class="font-headline-md text-xl uppercase font-bold text-on-surface mb-2">Pode chegar pro Café</h3>
+<p class="font-body-sm text-on-secondary-container leading-relaxed">
+          Nossa porta tá sempre aberta. Venha trocar uma ideia sobre rotas, pedais e tomar um café fresquinho com a gente.
+        </p>
+</div>
+</div>
+</div>
+</div>
 </section>
-
-<section>
-  <h2>Indicações de Bicicletas</h2>
-  <ul>
-    <li><a href="https://mercadolivre.com/sec/1kGeJYn" target="_blank">🚲 MTB Aro 29 – Iniciante</a></li>
-    <li><a href="https://mercadolivre.com/sec/2uewQCZ" target="_blank">🚲 MTB Aro 29 – Intermediario</a></li>
-    <li><a href="https://mercadolivre.com/sec/1N44wZc" target="_blank">🚲 MTB Aro 29 – Avançado</a></li>
-    <li><a href="https://mercadolivre.com/sec/2G2e2Di" target="_blank">🚲 Bicicletas Urbana / Lazer</a></li>
-    <li><a href="https://mercadolivre.com/sec/1ZrkjbN" target="_blank">🚲 Bicicletas Infantil</a></li>
-  </ul>
+<section class="py-16 md:py-24 bg-surface border-b border-surface-container-highest" id="revisoes">
+<div class="max-w-6xl mx-auto px-margin-mobile md:px-margin-tablet">
+<div class="text-center max-w-2xl mx-auto mb-14">
+<span class="font-label-sm uppercase tracking-widest text-primary-container font-bold">CUIDADO SOB MEDIDA PRA SUA BIKE</span>
+<h2 class="font-headline-xl text-3xl md:text-4xl uppercase font-bold text-on-surface mt-1">O QUE A GENTE FAZ POR AQUI</h2>
+<p class="font-body-lg text-on-secondary-container mt-2">Do ajuste rápido antes do pedal à geral completa para deixar a bike zero dor de cabeça.</p>
+<div>Você escolhe o que precisa.</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+<div class="p-5 md:p-6 rounded-xl bg-surface-container-low/60 hover:bg-surface-container-low border border-outline-variant/20 hover:border-primary-container/40 transition-all flex flex-col justify-between group">
+<div class="space-y-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary-container/15 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-xl" data-icon="build">build</span>
+</div>
+<h3 class="font-headline-md text-lg uppercase font-bold text-on-surface group-hover:text-primary transition-colors leading-tight">Revisão Geral</h3>
+</div>
+<p class="font-body-sm text-on-secondary-container leading-relaxed">Desmontagem detalhada, limpeza fina e lubrificação completa para sua bike rodar macia e silenciosa.</p>
+</div>
+</div>
+<div class="p-5 md:p-6 rounded-xl bg-surface-container-low/60 hover:bg-surface-container-low border border-outline-variant/20 hover:border-primary-container/40 transition-all flex flex-col justify-between group">
+<div class="space-y-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary-container/15 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-xl" data-icon="tune">tune</span>
+</div>
+<h3 class="font-headline-md text-lg uppercase font-bold text-on-surface group-hover:text-primary transition-colors leading-tight">Regulagem de Marchas & Freios</h3>
+</div>
+<p class="font-body-sm text-on-secondary-container leading-relaxed">Trocas de marchas precisas e resposta imediata nas frenagens para descidas com total segurança.</p>
+</div>
+</div>
+<div class="p-5 md:p-6 rounded-xl bg-surface-container-low/60 hover:bg-surface-container-low border border-outline-variant/20 hover:border-primary-container/40 transition-all flex flex-col justify-between group">
+<div class="space-y-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary-container/15 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-xl" data-icon="pedal_bike">pedal_bike</span>
+</div>
+<h3 class="font-headline-md text-lg uppercase font-bold text-on-surface group-hover:text-primary transition-colors leading-tight">Montagem de Bicicletas</h3>
+</div>
+<p class="font-body-sm text-on-secondary-container leading-relaxed">Bike na caixa ou montagem peça a peça com o torque exato de fábrica e pronta pro primeiro pedal.</p>
+</div>
+</div>
+<div class="p-5 md:p-6 rounded-xl bg-surface-container-low/60 hover:bg-surface-container-low border border-outline-variant/20 hover:border-primary-container/40 transition-all flex flex-col justify-between group">
+<div class="space-y-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary-container/15 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-xl" data-icon="adjust">adjust</span>
+</div>
+<h3 class="font-headline-md text-lg uppercase font-bold text-on-surface group-hover:text-primary transition-colors leading-tight">Alinhamento de Rodas</h3>
+</div>
+<p class="font-body-sm text-on-secondary-container leading-relaxed">Rodas perfeitamente centradas e alinhadas, sem vibrações ou atrito contra pastilhas e quadro.</p>
+</div>
+</div>
+<div class="p-5 md:p-6 rounded-xl bg-surface-container-low/60 hover:bg-surface-container-low border border-outline-variant/20 hover:border-primary-container/40 transition-all flex flex-col justify-between group">
+<div class="space-y-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary-container/15 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-xl" data-icon="motion_photos_on">motion_photos_on</span>
+</div>
+<h3 class="font-headline-md text-lg uppercase font-bold text-on-surface group-hover:text-primary transition-colors leading-tight">Conversão Tubeless</h3>
+</div>
+<p class="font-body-sm text-on-secondary-container leading-relaxed">Instalação profissional de fita, bicos e selante de ponta para esquecer furos e espinhos na trilha.</p>
+</div>
+</div>
+<div class="p-5 md:p-6 rounded-xl bg-surface-container-low/60 hover:bg-surface-container-low border border-outline-variant/20 hover:border-primary-container/40 transition-all flex flex-col justify-between group">
+<div class="space-y-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary-container/15 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-xl" data-icon="construction">construction</span>
+</div>
+<h3 class="font-headline-md text-lg uppercase font-bold text-on-surface group-hover:text-primary transition-colors leading-tight">Upgrades & Troca de Peças</h3>
+</div>
+<p class="font-body-sm text-on-secondary-container leading-relaxed">Substituição de transmissão, coroas, guidão, freios e componentes instalados e afinados na medida.</p>
+</div>
+</div>
+</div>
+<div class="mt-12 p-8 rounded-2xl bg-surface-container border border-outline-variant/30 flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="space-y-2 text-center md:text-left max-w-xl">
+<div class="inline-flex items-center gap-2 text-primary font-label-sm uppercase tracking-wider font-bold">
+<span class="material-symbols-outlined text-base text-primary-container" data-icon="build_circle">build_circle</span>
+<span class="text-primary-container">Outros serviços & projetos especiais</span>
+</div>
+<h4 class="font-headline-md text-2xl uppercase font-bold text-on-surface">A gente faz muito mais!</h4>
+<p class="font-body-md text-on-secondary-container">Da troca de um raio à montagem completa do zero, sangria, revisão ou adaptações especiais: se a sua bike precisa de cuidado, a gente resolve!</p>
+</div>
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-label-lg uppercase tracking-wider px-7 py-3.5 rounded-full font-bold transition-all shadow-md active:scale-95 whitespace-nowrap" href="https://wa.me/5522992464780?text=Ol%C3%A1%20Buiu!%20Gostaria%20de%20consultar%20sobre%20outro%20servi%C3%A7o%20pra%20minha%20bike" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-xl" data-icon="chat">chat</span>
+<span class="text-white font-bold">Consultar outros serviços no WhatsApp</span>
+</a>
+</div>
+</div>
 </section>
-
-<footer>
-  <p>© 2025 • Buiu Bikes</p>
-</footer>
-
-<script>
-  function abrirMapa() {
-    window.open('https://maps.app.goo.gl/znkZgdg1HX7PK8Mq8', '_blank');
-  }
-  function abrirWhats() {
-    window.open('https://wa.me/5522992464780', '_blank');
-  }
-  function abrirInstagram() {
-    window.open('https://www.instagram.com/buiubikes', '_blank');
-  }
-  function abrirFacebook() {
-    window.open('https://www.facebook.com/buiubikes', '_blank');
-  }
-</script>
-
+<section class="py-16 md:py-24 bg-surface-container-lowest border-y border-surface-container-highest" id="oficina">
+<div class="max-w-6xl mx-auto px-margin-mobile md:px-margin-tablet">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+<div class="lg:col-span-7">
+<div class="relative rounded-2xl overflow-hidden border border-outline-variant/30 warm-glow group">
+<img alt="Nossa oficina acolhedora com bicicletas no cavalete de manutenção e ferramentas organizadas" class="w-full h-[400px] sm:h-[460px] md:h-[500px] object-cover object-top filter contrast-105 group-hover:scale-102 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcykjvYg5mbQ0l0siPOmNVG27Glx6n8he0G3YMUOK3E_MzpcvHS_AHDQJm99BbslwxsMgcBuQ2ViV2J3yOhWUKGhw9lyvEX03hobR1pGMBdVgmeG1gHLT-zIxS4zSb8IC1sZeHmAUk1Gt0_lhbMJ-7x4mQLHEZR10TOcwczOoezrKT5mXgZZfoLGvr6qHydzN09qfEKU4N5Kzr1Da7Mbk_9NNqJJEia2t_9rSgv_7U8RAmHlyzfYFUmGliaVpyNzOJCyXETfXFm8ZS">
+<div class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-surface-container/90 backdrop-blur-sm border border-outline-variant/30 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</div>
+<div>
+<div class="font-title-sm text-sm md:text-base text-on-surface font-bold">Bancada Aberta</div>
+<div class="text-xs text-on-secondary-container">Você pode acompanhar de pertinho se quiser!</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 space-y-6">
+<div class="inline-flex items-center gap-2 font-label-sm uppercase tracking-widest font-bold text-primary-container">
+<span class="material-symbols-outlined text-base" data-icon="storefront">storefront</span>
+<span class="">SOBRE</span>
+</div>
+<h2 class="font-headline-xl text-3xl md:text-4xl uppercase text-on-surface font-bold leading-tight">
+        Aqui sua bike é recebida com carinho de verdade
+      </h2>
+<p class="font-body-md text-on-secondary-container leading-relaxed">
+        Não importa se você tem uma bike de passeio pra ir até a padaria ou uma máquina de trilha pra subir montanha: o carinho e a atenção são os mesmos.
+      </p>
+<p class="font-body-md text-on-secondary-container leading-relaxed">Você conversa direto com quem vai apertar os parafusos da sua bike, sem recepcionista intermediando e sem papo furado.
+      </p>
+<div class="pt-2">
+<a class="inline-flex items-center gap-3 bg-emerald-600 hover:bg-emerald-500 text-white font-label-lg uppercase tracking-wider px-6 py-3 rounded-full font-bold transition-all shadow-md active:scale-95" href="https://wa.me/5522992464780?text=Ol%C3%A1%20Buiu,%20queria%20tirar%20uma%20d%C3%BAvida%20sobre%20minha%20bike" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-lg" data-icon="chat">chat</span>
+<span class="">Chamar no WhatsApp<br></span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-16 md:py-24 bg-surface" id="avaliacoes">
+<div class="max-w-6xl mx-auto px-margin-mobile md:px-margin-tablet">
+<div class="text-center max-w-3xl mx-auto mb-14">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-container-high border border-outline-variant/30 text-xs text-on-surface font-semibold uppercase tracking-wider mb-4 shadow-sm">
+<svg class="w-4 h-4" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"></path><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.34 24 12 24z"></path><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.14-1.55.38-2.27V6.58H1.25C.45 8.18 0 10.03 0 12s.45 3.82 1.25 5.42l4.03-3.15z"></path><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.34 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"></path></svg>
+<span class="font-bold text-on-surface">4.9 de 5.0</span>
+<span class="text-on-secondary-container">• Perfil Verificado no Google</span>
+</div>
+<h2 class="font-headline-xl text-3xl md:text-5xl uppercase font-bold text-on-surface tracking-tight leading-tight">O que nossos clientes dizem</h2>
+<p class="font-body-md text-on-secondary-container mt-2 max-w-xl mx-auto">Ciclistas de Armação dos Búzios e visitantes que confiam na Buiu Bikes.</p>
+<div class="flex items-center justify-center gap-1.5 text-amber-400 mt-4">
+<span class="material-symbols-outlined text-2xl text-amber-400" style="font-variation-settings: 'FILL' 1;" data-icon="star">star</span>
+<span class="material-symbols-outlined text-2xl text-amber-400" style="font-variation-settings: 'FILL' 1;" data-icon="star">star</span>
+<span class="material-symbols-outlined text-2xl text-amber-400" style="font-variation-settings: 'FILL' 1;" data-icon="star">star</span>
+<span class="material-symbols-outlined text-2xl text-amber-400" style="font-variation-settings: 'FILL' 1;" data-icon="star">star</span>
+<span class="material-symbols-outlined text-2xl text-amber-400" style="font-variation-settings: 'FILL' 1;" data-icon="star">star</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-surface-container-low border border-surface-variant p-6 rounded-2xl flex flex-col justify-between hover:border-outline-variant/60 transition-all shadow-md group">
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1 text-amber-400">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;" data-icon="star">star</span>
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;" data-icon="star">star</span>
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;" data-icon="star">star</span>
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;" data-icon="star">star</span>
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;" data-icon="star">star</span>
+</div>
+</div>
+<p class="font-body-md text-on-surface italic leading-relaxed">Excelente profissional, preço acessível e serviço de qualidade. O cara sabe o que faz, muito honesto e correto. Voltarei mais vezes e endicarei pra mais pessoas. 💪🏻💪🏻</p>
+</div>
+<div class="pt-5 border-t border-outline-variant/20 mt-6">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<img src="https://lh3.googleusercontent.com/a-/ALV-UjXBd_7CNRgV7vvStf-T698fECfCYY8WqTgaoOvdThFmc90A_42Sag=w32-h32-p-rp-mo-ba12-br100" alt="Alessandro Ricardo" class="w-10 h-10 rounded-full object-cover border border-outline-variant/30">
+<div>
+<h4 class="font-title-sm text-sm font-bold text-on-surface">Alessandro Ricardo</h4>
+<p class="text-xs text-on-secondary-container">8 avaliações · 5 fotos</p>
+</div>
+</div>
+<div class="inline-flex items-center gap-1 text-emerald-400 text-xs font-semibold" title="Avaliação verificada no Google">
+<span class="material-symbols-outlined text-base" data-icon="verified">verified</span>
+<span class="hidden sm:inline text-xs">Google</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low border border-surface-variant p-6 rounded-2xl flex flex-col justify-between hover:border-outline-variant/60 transition-all shadow-md group">
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1 text-amber-400">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;" data-icon="star">star</span>
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;" data-icon="star">star</span>
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;" data-icon="star">star</span>
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;" data-icon="star">star</span>
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;" data-icon="star">star</span>
+</div>
+<span class="text-xs text-on-secondary-container">Há 1 mês</span>
+</div>
+<p class="font-body-md text-on-surface italic leading-relaxed">Luiz Henrique, da Buiu Bike, é um profissional extremamente capacitado e dedicado ao que faz. Sempre justo e correto, transmite muita confiança no serviço prestado. …</p>
+</div>
+<div class="pt-5 border-t border-outline-variant/20 mt-6">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<img src="https://lh3.googleusercontent.com/a-/ALV-UjUyEA8PCeoF8phUfhiLXJXQCNR-pDQ7us-PKmrjEoCY_AIPxImZ=w32-h32-p-rp-mo-br100" alt="Foto de perfil de Igor Rangel" class="w-10 h-10 rounded-full object-cover border border-outline-variant/30">
+<div>
+<h4 class="font-title-sm text-sm font-bold text-on-surface">Igor Rangel</h4>
+<p class="text-xs text-on-secondary-container">2 avaliações · 24 fotos</p>
+</div>
+</div>
+<div class="inline-flex items-center gap-1 text-emerald-400 text-xs font-semibold" title="Avaliação verificada no Google">
+<span class="material-symbols-outlined text-base" data-icon="verified">verified</span>
+<span class="hidden sm:inline text-xs">Google</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low border border-surface-variant p-6 rounded-2xl flex flex-col justify-between hover:border-outline-variant/60 transition-all shadow-md group">
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1 text-amber-400">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;" data-icon="star">star</span>
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;" data-icon="star">star</span>
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;" data-icon="star">star</span>
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;" data-icon="star">star</span>
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;" data-icon="star">star</span>
+</div>
+<span class="text-xs text-on-secondary-container">Há 3 semanas</span>
+</div>
+<p class="font-body-md text-on-surface italic leading-relaxed">Super recomendo !!! Dou 10/10! Super profissional com datas e horários de entrega das bicicletas. Preço justo e trabalho impecável! Amei !!!!</p>
+</div>
+<div class="pt-5 border-t border-outline-variant/20 mt-6">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<img src="https://lh3.googleusercontent.com/a-/ALV-UjX4sdPJkkOh0uNjzfhrZzVKwzybdcLQMGYXAjuHtCvlKCcgTDqFhw=w32-h32-p-rp-mo-ba12-br100" alt="Alan Tedesco" class="w-10 h-10 rounded-full object-cover border border-outline-variant/30">
+<div>
+<h4 class="font-title-sm text-sm font-bold text-on-surface">Susane Priscila Souza</h4>
+<p class="text-xs text-on-secondary-container">20 avaliações · 9 fotos</p>
+</div>
+</div>
+<div class="inline-flex items-center gap-1 text-emerald-400 text-xs font-semibold" title="Avaliação verificada no Google">
+<span class="material-symbols-outlined text-base" data-icon="verified">verified</span>
+<span class="hidden sm:inline text-xs">Google</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
+<div class="inline-flex items-center gap-2 text-xs uppercase font-bold tracking-wider text-secondary">
+<span class="material-symbols-outlined text-emerald-400 text-base" data-icon="verified">verified</span>
+<span class="">Avaliações 100% verificadas no perfil oficial do Google</span>
+</div>
+</div>
+</div>
+</section>
+<section class="py-16 md:py-24 bg-surface-container-lowest border-t border-surface-container-highest" id="contato">
+<div class="max-w-6xl mx-auto px-margin-mobile md:px-margin-tablet">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-6 bg-surface-container-low border border-outline-variant/30 rounded-2xl p-8 shadow-xl">
+<div class="inline-flex items-center gap-2 font-label-sm uppercase tracking-widest text-primary-container font-bold mb-2">
+<span class="material-symbols-outlined text-base text-primary-container" data-icon="send">send</span>
+<span class="text-primary-container">FALE CONOSCO</span>
+</div>
+<h3 class="font-headline-lg text-2xl md:text-3xl uppercase text-on-surface font-bold mb-2">
+          Conta pra gente da sua bike
+        </h3>
+<p class="font-body-sm text-on-secondary-container mb-6">
+          Preencha esses 3 campinhos rápidos e a gente já te chama no WhatsApp.
+        </p>
+<form class="space-y-4" onsubmit="event.preventDefault(); const nome = document.getElementById('campo-nome').value; const whats = document.getElementById('campo-whats').value; const msg = document.getElementById('campo-msg').value; const texto = encodeURIComponent(`Olá Buiu Bikes! Meu nome é ${nome} (${whats}). Minha bike tá precisando de: ${msg}`); window.open(`https://wa.me/5522992464780?text=${texto}`, '_blank');">
+<div>
+<label class="block text-xs uppercase font-bold text-secondary mb-1.5" for="campo-nome">Seu Nome</label>
+<input class="w-full bg-surface border border-outline-variant/40 rounded-xl px-4 py-3 text-on-surface focus:border-primary-container focus:ring-0 text-sm outline-none transition-colors" id="campo-nome" placeholder="Como podemos te chamar?" required="" type="text">
+</div>
+<div>
+<label class="block text-xs uppercase font-bold text-secondary mb-1.5" for="campo-whats">Seu WhatsApp</label>
+<input class="w-full bg-surface border border-outline-variant/40 rounded-xl px-4 py-3 text-on-surface focus:border-primary-container focus:ring-0 text-sm outline-none transition-colors" id="campo-whats" placeholder="(22) 99999-9999" required="" type="tel">
+</div>
+<div>
+<label class="block text-xs uppercase font-bold text-secondary mb-1.5" for="campo-msg">O que sua bike tá precisando?</label>
+<textarea class="w-full bg-surface border border-outline-variant/40 rounded-xl px-4 py-3 text-on-surface focus:border-primary-container focus:ring-0 text-sm outline-none transition-colors" id="campo-msg" placeholder="Ex: Marcha raspando, freio duro, ou só uma boa revisão pra voltar a pedalar..." required="" rows="3"></textarea>
+</div>
+<button class="w-full inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-label-lg uppercase tracking-wider py-4 rounded-xl font-bold transition-all shadow-lg active:scale-95 text-base" type="submit">
+<span class="material-symbols-outlined text-xl" data-icon="chat">chat</span>
+<span class="">Bora bater um papo no WhatsApp</span>
+</button>
+<p class="text-center text-xs text-on-secondary-container mt-2">Sem spam. Você conversa direto com o mecânico.</p>
+</form>
+</div>
+<div class="lg:col-span-6 space-y-6">
+<div class="">
+<span class="font-label-sm uppercase tracking-widest text-primary-container font-bold">Onde Fica a Oficina</span>
+<h3 class="font-headline-lg text-2xl md:text-3xl uppercase font-bold text-on-surface mt-1 mb-3">
+          Passa aqui pra trocar uma ideia!</h3>
+</div>
+<div class="rounded-2xl overflow-hidden border border-outline-variant/30 shadow-lg h-64 w-full relative group">
+<iframe title="Localização da Oficina Buiu Bikes Repair" class="w-full h-full border-0 filter contrast-105" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.5850357283766!2d-41.971397788117415!3d-22.743660079284165!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x97ab46cac21c1b%3A0xed2f77ff1c3d1480!2sBuiu%20Bikes%20-%20Oficina%20de%20Bicicletas!5e0!3m2!1spt-BR!2sbr!4v1788719706175!5m2!1spt-BR!2sbr" loading="lazy" allowfullscreen=""></iframe>
+<div class="absolute bottom-3 right-3">
+<a class="inline-flex items-center gap-1.5 bg-surface-container-high/90 hover:bg-surface-container-highest backdrop-blur-md text-on-surface border border-outline-variant/40 px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all shadow-md" href="https://maps.app.goo.gl/5eeBeh99b3wHXJhL9" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined text-sm text-primary" data-icon="directions">directions</span>
+<span class="">Ver rota no Maps</span>
+</a>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="p-4 rounded-xl bg-surface-container border border-outline-variant/20">
+<div class="flex items-center gap-2 text-primary-container mb-1">
+<span class="material-symbols-outlined text-lg" data-icon="schedule">schedule</span>
+<span class="text-xs uppercase font-bold">Horário de Funcionamento</span>
+</div>
+<p class="text-sm text-on-surface">Segunda a Sexta: 09:00 às 18:00</p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container border border-outline-variant/20">
+<div class="flex items-center gap-2 text-primary-container mb-1">
+<span class="material-symbols-outlined text-lg" data-icon="pin_drop">pin_drop</span>
+<span class="text-xs uppercase font-bold">Endereço</span>
+</div>
+<p class="text-sm text-on-surface">Tv. Brasil, 13 - Rasa, Armação dos Búzios - RJ, 28953-310</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-16 md:py-24 bg-surface-container-lowest border-t border-surface-container-highest" id="indicacoes">
+<div class="max-w-6xl mx-auto px-margin-mobile md:px-margin-tablet">
+<div class="text-center max-w-2xl mx-auto mb-14">
+<span class="font-label-sm uppercase tracking-widest text-primary-container font-bold">RECOMENDAÇÕES DO ESPECIALISTA</span>
+<h2 class="font-headline-xl text-3xl md:text-4xl uppercase font-bold text-on-surface mt-1">Indicações de Bicicletas</h2>
+<p class="font-body-lg text-on-secondary-container mt-2 leading-relaxed">Não sabe qual bike escolher ou quer fazer aquele upgrade esperto? Separamos nossas recomendações de confiança pra cada momento do seu pedal.</p>
+</div>
+<div class="flex flex-col gap-3 max-w-4xl mx-auto">
+<a href="https://mercadolivre.com/sec/1kGeJYn" target="_blank" rel="noopener noreferrer" class="bg-surface-container hover:bg-surface-container-high transition-colors rounded-xl md:rounded-2xl px-5 md:px-6 py-4 flex items-center gap-3 text-on-surface border border-outline-variant/20 hover:border-primary-container/40 group">
+<div class="w-10 h-10 rounded-lg bg-primary-container/15 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-xl" data-icon="pedal_bike">pedal_bike</span>
+</div>
+<span class="font-medium text-base text-on-surface group-hover:text-primary transition-colors">MTB Aro 29 – Iniciante</span>
+</a>
+<a href="https://mercadolivre.com/sec/2uewQCZ" target="_blank" rel="noopener noreferrer" class="bg-surface-container hover:bg-surface-container-high transition-colors rounded-xl md:rounded-2xl px-5 md:px-6 py-4 flex items-center gap-3 text-on-surface border border-outline-variant/20 hover:border-primary-container/40 group">
+<div class="w-10 h-10 rounded-lg bg-primary-container/15 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-xl" data-icon="pedal_bike">pedal_bike</span>
+</div>
+<span class="font-medium text-base text-on-surface group-hover:text-primary transition-colors">MTB Aro 29 – Intermediario</span>
+</a>
+<a href="https://mercadolivre.com/sec/1N44wZc" target="_blank" rel="noopener noreferrer" class="bg-surface-container hover:bg-surface-container-high transition-colors rounded-xl md:rounded-2xl px-5 md:px-6 py-4 flex items-center gap-3 text-on-surface border border-outline-variant/20 hover:border-primary-container/40 group">
+<div class="w-10 h-10 rounded-lg bg-primary-container/15 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-xl" data-icon="pedal_bike">pedal_bike</span>
+</div>
+<span class="font-medium text-base text-on-surface group-hover:text-primary transition-colors">MTB Aro 29 – Avançado</span>
+</a>
+<a href="https://mercadolivre.com/sec/2G2e2Di" target="_blank" rel="noopener noreferrer" class="bg-surface-container hover:bg-surface-container-high transition-colors rounded-xl md:rounded-2xl px-5 md:px-6 py-4 flex items-center gap-3 text-on-surface border border-outline-variant/20 hover:border-primary-container/40 group">
+<div class="w-10 h-10 rounded-lg bg-primary-container/15 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-xl" data-icon="directions_bike">directions_bike</span>
+</div>
+<span class="font-medium text-base text-on-surface group-hover:text-primary transition-colors">Bicicletas Urbana / Lazer</span>
+</a>
+<a href="https://mercadolivre.com/sec/1ZrkjbN" target="_blank" rel="noopener noreferrer" class="bg-surface-container hover:bg-surface-container-high transition-colors rounded-xl md:rounded-2xl px-5 md:px-6 py-4 flex items-center gap-3 text-on-surface border border-outline-variant/20 hover:border-primary-container/40 group">
+<div class="w-10 h-10 rounded-lg bg-primary-container/15 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-xl" data-icon="pedal_bike">pedal_bike</span>
+</div>
+<span class="font-medium text-base text-on-surface group-hover:text-primary transition-colors">Bicicletas Infantil</span>
+</a>
+</div>
+</div>
+</section>
+<aside class="md:hidden fixed bottom-4 right-4 z-40">
+<a class="flex items-center gap-2 bg-emerald-600 text-white px-5 py-3 rounded-full shadow-2xl font-bold active:scale-95" href="https://wa.me/5522992464780?text=Ol%C3%A1%20Buiu%20Bikes,%20preciso%20de%20ajuda%20com%20minha%20bike!" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-xl" data-icon="chat">chat</span>
+<span class="text-xs uppercase tracking-wider">Chamar no Whats</span>
+</a>
+</aside>
 </main>
+<footer class="w-full border-t border-outline-variant/20 bg-surface-container-lowest text-on-surface/70 py-12">
+<div class="max-w-6xl mx-auto px-margin-mobile md:px-margin-tablet flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-3">
+<img alt="Buiu Bikes Repair" class="h-10 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKTkNg2IrL8NIGqPPqRearB4MwTQPRBcKNobn47ixaZvR7x4ogV8NGkYA_335p9n2QBL-BueBKXKXILU7NQtnerm8s11mRlLg8-_j7LiQ5203IJ5OGhixbsyzEpuzQZvYScfCxpvKaX5c4Z1S1hfHf-KSywp7o3c3Qgih0uoxGb_eDxd2LHiu56mAqHaYHF3Y1fNWMPxqkmyFCf73MwPUFkpo1IXKqkDFikx5JjsQDBpmCQe_I-sFmQgXOqKaE33ZJ">
+<div class="">
+<span class="font-headline-md text-xl font-bold uppercase text-on-surface">Buiu Bikes</span>
+<p class="text-xs text-on-secondary-container">Sua bike, nossa paixão!</p>
+</div>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-6 text-xs uppercase tracking-wider text-secondary">
+<a class="hover:text-primary transition-colors" href="#revisoes">Serviços</a>
+<a class="hover:text-primary transition-colors" href="#oficina">Sobre</a>
+<a class="hover:text-primary transition-colors" href="#contato">Contato</a>
+<a class="hover:text-primary transition-colors" href="#indicacoes">Indicações</a>
+</div>
+<div class="text-xs text-center md:text-right text-on-secondary-container">
+    © 2026 Buiu Bikes Re. Feito por quem pedala pra quem pedala.
+  </div>
+</div>
+</footer>
 </body>
 </html>
